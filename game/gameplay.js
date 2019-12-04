@@ -153,7 +153,7 @@ function collectStar (player, star)
 
     //  Add and update the score
     score += 1;
-  
+    scoreText.setText('Score: ' + score);
 
     if (stars.countActive(true) === 0)
     {
