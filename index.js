@@ -5,7 +5,7 @@ var Hport = process.env.PORT;
 
 app.use(express.static('game'));
 app.get('/' , function(req, res){
-    res.sendFile(__dirname +'/game/index.html');
+    res.sendFile(__dirname +'game/index.html');
 })
 
 
