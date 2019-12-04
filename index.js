@@ -28,6 +28,9 @@ app.use(function(req, res, next) {
 // Start server
 // console.log(sitePath);
 console.log("Starting server in: " + __dirname + '/' );
+app.get('/', function(req , res){
+    res.sendFile(__dirname +'/game/index.html');
+})
 app.use(express.static(__dirname + '/game'));
 
 app.listen(port, function() { 
