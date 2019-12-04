@@ -1,39 +1,13 @@
-/**
- * Simple web server based on 
- * http://expressjs.com/en/starter/hello-world.html
- *
- * Prerequisites:
- *  - Node
- *  - Express (npm install express)
- * 
- * To use, save as a file (e.g. index.js) and run with:
- *  node index.js /PATH/TO/WWW/
- */
- 
-// Parameters
-// var sitePath = process.argv[2] || ".";
-var port = process.env.PORT;
-
-// Libraries
 var express = require('express');
 var app = express();
+var Lport = 1000;
+var Hport = process.env.PORT;
 
-// Request logging
-
-// app.use(express.static('game'))
-
-// Start server
-// console.log(sitePath);
-console.log("Starting server in: " + __dirname + '/' );
-app.get('/', function(req , res){
+app.get('/' , function(req, res){
     res.sendFile(__dirname +'/game/index.html');
 })
-// app.use(function(req, res, next) {
-//     console.log(req.url);
-//     next();
-// });
-app.use(express.static(__dirname + '/game'));
+app.use(express.static('game'));
 
-app.listen(port, function() { 
-    console.log("Server running at: http://localhost:" + port)
-});
+var server = app.listen(Hport , function(){
+    console.log("Server running at " + Hport);
+})
