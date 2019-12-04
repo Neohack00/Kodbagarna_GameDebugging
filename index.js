@@ -19,10 +19,7 @@ var express = require('express');
 var app = express();
 
 // Request logging
-app.use(function(req, res, next) {
-    console.log(req.url);
-    next();
-});
+
 // app.use(express.static('game'))
 
 // Start server
@@ -31,6 +28,10 @@ console.log("Starting server in: " + __dirname + '/' );
 app.get('/', function(req , res){
     res.sendFile(__dirname +'/game/index.html');
 })
+// app.use(function(req, res, next) {
+//     console.log(req.url);
+//     next();
+// });
 app.use(express.static(__dirname + '/game'));
 
 app.listen(port, function() { 
