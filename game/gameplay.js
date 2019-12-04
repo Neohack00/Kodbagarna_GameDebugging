@@ -6,7 +6,7 @@ var config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 300 },
+            gravity: { y: 200 },
             debug: false
         }
     },
@@ -143,7 +143,7 @@ function update ()
 
     if (cursors.up.isDown && player.body.touching.down)
     {
-        player.setVelocityY(-180);
+        player.setVelocityY(-280);
     }
 }
 
